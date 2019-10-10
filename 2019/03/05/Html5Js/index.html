@@ -4,8 +4,14 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="video.js的使用及问题, 追梦少年">
-    <meta name="description" content="最近的项目中需要播放视频，鉴于html5元素video的一些坑及不想自己造轮子，于是就找到了web端播放视频使用量最多的插件video.js，video.js是国外开发者开发的，英语本身就不好的我看英文文档简直是折磨，国内又没有中文文档，能">
+    <meta name="keywords" content="html5.js让IE（包括IE6）支持HTML5元素方法, 追梦少年">
+    <meta name="description" content="html5.js让IE（包括IE6）支持HTML5元素方法
+
+1、引用Google的html5.js文件
+    
+
+
+将上代码复制到head部分，记住一定要是head部分（因为IE必须在元素解析前知道这个元素，所以这个js文件不能在其他位">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +19,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>video.js的使用及问题 | 追梦少年</title>
+    <title>html5.js让IE（包括IE6）支持HTML5元素方法 | 追梦少年</title>
     <link rel="icon" type="image/png" href="/xiaocong/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/xiaocong/libs/awesome/css/all.css">
@@ -263,13 +269,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/xiaocong/medias/banner/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/xiaocong/medias/banner/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        video.js的使用及问题
+                        html5.js让IE（包括IE6）支持HTML5元素方法
                     </div>
                 </div>
             </div>
@@ -296,8 +302,8 @@
                                 <span class="chip bg-color">javascript</span>
                             </a>
                         
-                            <a href="/xiaocong/tags/vue/">
-                                <span class="chip bg-color">vue</span>
+                            <a href="/xiaocong/tags/html/">
+                                <span class="chip bg-color">html</span>
                             </a>
                         
                     </div>
@@ -320,7 +326,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-03-04
+                    2019-03-05
                 </div>
 
                 
@@ -336,218 +342,109 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>最近的项目中需要播放视频，鉴于html5元素video的一些坑及不想自己造轮子，于是就找到了web端播放视频使用量最多的插件video.js，video.js是国外开发者开发的，英语本身就不好的我看英文文档简直是折磨，国内又没有中文文档，能搜的到的基本是简单的使用及最基本的api的介绍，想要实现一些自定义功能无从下手，所以我在这里整理一份我所遇到的问题及解决方法</p>
+                <p>html5.js让IE（包括IE6）支持HTML5元素方法</p>
 
-<h2 id="1、视频初始化"><a href="#1、视频初始化" class="headerlink" title="1、视频初始化"></a>1、视频初始化</h2><p>video.js有两种初始化方式，一种是在video的html标签之中，一种是使用js来进行初始化</p>
-<h3 id="1-1、在video中进行初始化"><a href="#1-1、在video中进行初始化" class="headerlink" title="1.1、在video中进行初始化"></a>1.1、在video中进行初始化</h3><textarea autocomplete="off" placeholder="请输入备注" style="height: 278px;">
-    <video id="my-player" class="video-js" controls preload="auto" poster="//vjs.zencdn.net/v/oceans.png" width="600" height="400" data-setup="{}">
-  <source src="//vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
-  <source src="//vjs.zencdn.net/v/oceans.webm" type="video/webm">
-  <source src="//vjs.zencdn.net/v/oceans.ogv" type="video/ogg">
-  <p class="vjs-no-js">
-    To view this video please enable JavaScript, and consider upgrading to a
-    web browser that
-    <a href="https://videojs.com/html5-video-support/" target="_blank">
-      supports HTML5 video
-    </a>
-  </p>
-  </video>
+<h2 id="1、引用Google的html5-js文件"><a href="#1、引用Google的html5-js文件" class="headerlink" title="1、引用Google的html5.js文件"></a>1、引用Google的html5.js文件</h2><textarea autocomplete="off" placeholder="请输入备注" style="height: 78px;">
+    <!--[if IE]>
+    <script src=”http://html5shiv.googlecode.com/svn/trunk/html5.js”></script>
+    < ![endif]-->
 </textarea>
 
-<p>效果</p>
-<p><img src="/xiaocong/medias/banner/articlex.png" alt="效果图" title></p>
-
-<h3 id="1-2、使用js进行初始化"><a href="#1-2、使用js进行初始化" class="headerlink" title="1.2、使用js进行初始化"></a>1.2、使用js进行初始化</h3><textarea autocomplete="off" placeholder="请输入备注" style="height: 278px;">
-    <!-- vjs-big-play-centered可使大的播放按钮居住，vjs-fluid可使视频占满容器 -->
-<video id="myVideo" class="video-js vjs-big-play-centered vjs-fluid">
-  <p class="vjs-no-js">
-    To view this video please enable JavaScript, and consider upgrading to a
-    web browser that
-    <a href="https://videojs.com/html5-video-support/" target="_blank">
-      supports HTML5 video
-    </a>
-  </p>
-</video>
-
-<script>
-var player = videojs(document.getElementById('myVideo'), {
-  controls: true, // 是否显示控制条
-  poster: 'xxx', // 视频封面图地址
-  preload: 'auto',
-  autoplay: false,
-  fluid: true, // 自适应宽高
-  language: 'zh-CN', // 设置语言
-  muted: false, // 是否静音
-  inactivityTimeout: false,
-  controlBar: { // 设置控制条组件
-    /* 设置控制条里面组件的相关属性及显示与否
-    'currentTimeDisplay':true,
-    'timeDivider':true,
-    'durationDisplay':true,
-    'remainingTimeDisplay':false,
-    volumePanel: {
-      inline: false,
+<p><b>将上代码复制到head部分，记住一定要是head部分</b>（因为IE必须在元素解析前知道这个元素，所以这个js文件不能在其他位置调用，否则失效）</p>
+<p>当然，你也可以把代码拿出来自己看着办：html5.js</p>
+<textarea autocomplete="off" placeholder="请输入备注" style="height: 1278px;">
+    /*
+ HTML5 Shiv v3.6.2pre | @afarkas @jdalton @jon_neal @rem | MIT/GPL2 Licensed
+ Uncompressed source: https://github.com/aFarkas/html5shiv
+*/
+(function(l, f) {
+    function m() {
+        var a = e.elements;
+        return "string" == typeof a ? a.split(" ") : a
     }
-    */
-    /* 使用children的形式可以控制每一个控件的位置，以及显示与否 */
-    children: [
-      {name: 'playToggle'}, // 播放按钮
-      {name: 'currentTimeDisplay'}, // 当前已播放时间
-      {name: 'progressControl'}, // 播放进度条
-      {name: 'durationDisplay'}, // 总时间
-      { // 倍数播放
-        name: 'playbackRateMenuButton',
-        'playbackRates': [0.5, 1, 1.5, 2, 2.5]
-      },
-      {
-        name: 'volumePanel', // 音量控制
-        inline: false, // 不使用水平方式
-      },
-      {name: 'FullscreenToggle'} // 全屏
-    ]
-  },
-  sources:[ // 视频源
-      {
-          src: '//vjs.zencdn.net/v/oceans.mp4',
-          type: 'video/mp4',
-          poster: '//vjs.zencdn.net/v/oceans.png'
-      }
-  ]
-}, function (){
-  console.log('视频可以播放了',this);
-});
-</script>
-</textarea>
 
-<h2 id="2、controlBar组件的说明"><a href="#2、controlBar组件的说明" class="headerlink" title="2、controlBar组件的说明"></a>2、controlBar组件的说明</h2><ul>
-<li>playToggle, //播放暂停按钮</li>
-<li>volumeMenuButton,//音量控制</li>
-<li>currentTimeDisplay,//当前播放时间</li>
-<li>timeDivider, // ‘/‘ 分隔符</li>
-<li>durationDisplay, //总时间</li>
-<li>progressControl, //点播流时，播放进度条，seek控制</li>
-<li>liveDisplay, //直播流时，显示LIVE</li>
-<li>remainingTimeDisplay, //当前播放时间</li>
-<li>playbackRateMenuButton, //播放速率，当前只有html5模式下才支持设置播放速率</li>
-<li>fullscreenToggle //全屏控制</li>
-</ul>
-<p>currentTimeDisplay,timeDivider,durationDisplay是相对于 remainingTimeDisplay的另一套组件，后者只显示当前播放时间，前者还显示总时间。若要显示成前者这种模式，即 ‘当前时间/总时间’，可以在初始化播放器选项中配置：</p>
-<textarea autocomplete="off" placeholder="请输入备注" style="height: 178px;">
-    var myPlayer = neplayer('my-video', {controlBar:{
-    'currentTimeDisplay':true,
-    'timeDivider':true,
-    'durationDisplay':true,
-    'remainingTimeDisplay':false
-    }}, function() {
-         console.log('播放器初始化完成');
-    });
-</textarea>
+<pre><code>function i(a) {
+    var b = n[a[o]];
+    b || (b = {}, h++, a[o] = h, n[h] = b);
+    return b
+}
 
-<h2 id="3、video-js样式修改"><a href="#3、video-js样式修改" class="headerlink" title="3、video.js样式修改"></a>3、video.js样式修改</h2><textarea autocomplete="off" placeholder="请输入备注" style="height: 600px;">
-.video-js{ /* 给.video-js设置字体大小以统一各浏览器样式表现，因为video.js采用的是em单位 */
-  font-size: 14px;
+function p(a, b, c) {
+    b || (b = f);
+    if (g) return b.createElement(a);
+    c || (c = i(b));
+    b = c.cache[a] ? c.cache[a].cloneNode() : r.test(a) ? (c.cache[a] = c.createElem(a)).cloneNode() : c.createElem(a);
+    return b.canHaveChildren &amp;&amp; !s.test(a) ? c.frag.appendChild(b) : b
 }
-.video-js button{
-  outline: none;
-}
-.video-js.vjs-fluid,
-.video-js.vjs-16-9,
-.video-js.vjs-4-3{ /* 视频占满容器高度 */
-  height: 100%;
-  background-color: #161616;
-}
-.vjs-poster{
-  background-color: #161616;
-}
-.video-js .vjs-big-play-button{ /* 中间大的播放按钮 */
-  font-size: 2.5em;
-  line-height: 2.3em;
-  height: 2.5em;
-  width: 2.5em;
-  -webkit-border-radius: 2.5em;
-  -moz-border-radius: 2.5em;
-  border-radius: 2.5em;
-  background-color: rgba(115,133,159,.5);
-  border-width: 0.12em;
-  margin-top: -1.25em;
-  margin-left: -1.75em;
-}
-.video-js.vjs-paused .vjs-big-play-button{ /* 视频暂停时显示播放按钮 */
-  display: block;
-}
-.video-js.vjs-error .vjs-big-play-button{ /* 视频加载出错时隐藏播放按钮 */
-  display: none;
-}
-.vjs-loading-spinner { /* 加载圆圈 */
-  font-size: 2.5em;
-  width: 2em;
-  height: 2em;
-  border-radius: 1em;
-  margin-top: -1em;
-  margin-left: -1.5em;
-}
-.video-js .vjs-control-bar{ /* 控制条默认显示 */
-  display: flex;
-}
-.video-js .vjs-time-control{display:block;}
-.video-js .vjs-remaining-time{display: none;}
 
-<p>.vjs-button &gt; .vjs-icon-placeholder:before{ /* 控制条所有图标，图标字体大小最好使用px单位，如果使用em，各浏览器表现可能会不大一样 <em>/<br>  font-size: 22px;<br>  line-height: 1.9;<br>}<br>.video-js .vjs-playback-rate .vjs-playback-rate-value{<br>  line-height: 2.4;<br>  font-size: 18px;<br>}<br>/</em> 进度条背景色 */<br>.video-js .vjs-play-progress{<br>  color: #ffb845;<br>  background-color: #ffb845;<br>}<br>.video-js .vjs-progress-control .vjs-mouse-display{<br>  background-color: #ffb845;<br>}<br>.vjs-mouse-display .vjs-time-tooltip{<br>  padding-bottom: 6px;<br>  background-color: #ffb845;<br>}<br>.video-js .vjs-play-progress .vjs-time-tooltip{<br>  display: none!important;<br>}<br></p></textarea><p></p>
-<h2 id="4、动态切换视频"><a href="#4、动态切换视频" class="headerlink" title="4、动态切换视频"></a>4、动态切换视频</h2><textarea autocomplete="off" placeholder="请输入备注" style="height: 300px;">
-<script>
-  var data = {
-    src: 'xxx.mp4',
-    type: 'video/mp4'
-  };
-  var player = videojs('myVideo', {...});
-  player.pause();
-  player.src(data);
-  player.load(data);
-  // 动态切换poster
-  player.posterImage.setSrc('xxx.jpg');
-  player.play();
+function t(a, b) {
+    if (!b.cache) b.cache = {}, b.createElem = a.createElement, b.createFrag = a.createDocumentFragment, b.frag = b.createFrag();
+    a.createElement = function(c) {
+        return !e.shivMethods ? b.createElem(c) : p(c, a, b)
+    };
+    a.createDocumentFragment = Function(&quot;h,f&quot;, &quot;return function(){var n=f.cloneNode(),c=n.createElement;h.shivMethods&amp;&amp;(&quot; + m().join().replace(/\w+/g, function(a) {
+        b.createElem(a);
+        b.frag.createElement(a);
+        return &apos;c(&quot;&apos; + a + &apos;&quot;)&apos;
+    }) + &quot;);return n}&quot;)(e, b.frag)
+}
 
-<p>  // 销毁videojs<br>  //player.dispose();<br></script><br></textarea><p></p>
-<h2 id="5、设置语言"><a href="#5、设置语言" class="headerlink" title="5、设置语言"></a>5、设置语言</h2><h3 id="5-1传统形式开发"><a href="#5-1传统形式开发" class="headerlink" title="5.1传统形式开发"></a>5.1传统形式开发</h3><p>对于使用script标签形式的方式引入video.js，只需要在页面中引入你需要的语言包即可</p>
-<textarea autocomplete="off" placeholder="请输入备注" style="height: 300px;">
-<script src="//example.com/path/to/lang/es.js"></script>
-<script src="//example.com/path/to/lang/zh-CN.js"></script>
-<script src="//example.com/path/to/lang/zh-TW.js"></script>
+function q(a) {
+    a || (a = f);
+    var b = i(a);
+    if (e.shivCSS &amp;&amp; !j &amp;&amp; !b.hasCSS) {
+        var c, d = a;
+        c = d.createElement(&quot;p&quot;);
+        d = d.getElementsByTagName(&quot;head&quot;)[0] || d.documentElement;
+        c.innerHTML = &quot;x&lt;style&gt;article,aside,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}mark{background:#FF0;color:#000}&lt;/style&gt;&quot;;
+        c = d.insertBefore(c.lastChild, d.firstChild);
+        b.hasCSS = !! c
+    }
+    g || t(a, b);
+    return a
+}
+var k = l.html5 || {}, s = /^&lt;|^(?:button|map|select|textarea|object|iframe|option|optgroup)$/i,
+    r = /^(?:a|b|code|div|fieldset|h1|h2|h3|h4|h5|h6|i|label|li|ol|p|q|span|strong|style|table|tbody|td|th|tr|ul)$/i,
+    j, o = &quot;_html5shiv&quot;,
+    h = 0,
+    n = {}, g;
+(function() {
+    try {
+        var a = f.createElement(&quot;a&quot;);
+        a.innerHTML = &quot;&lt;xyz&gt;&lt;/xyz&gt;&quot;;
+        j = &quot;hidden&quot; in a;
+        var b;
+        if (!(b = 1 == a.childNodes.length)) {
+            f.createElement(&quot;a&quot;);
+            var c = f.createDocumentFragment();
+            b = &quot;undefined&quot; == typeof c.cloneNode ||
+                &quot;undefined&quot; == typeof c.createDocumentFragment || &quot;undefined&quot; == typeof c.createElement
+        }
+        g = b
+    } catch (d) {
+        g = j = !0
+    }
+})();
+var e = {
+    elements: k.elements || &quot;abbr article aside audio bdi canvas data datalist details figcaption figure footer header hgroup main mark meter nav output progress section summary time video&quot;,
+    version: &quot;3.6.2pre&quot;,
+    shivCSS: !1 !== k.shivCSS,
+    supportsUnknownElements: g,
+    shivMethods: !1 !== k.shivMethods,
+    type: &quot;default&quot;,
+    shivDocument: q,
+    createElement: p,
+    createDocumentFragment: function(a, b) {
+        a || (a = f);
+        if (g) return a.createDocumentFragment();
+        for (var b = b || i(a), c = b.frag.cloneNode(), d = 0, e = m(), h = e.length; d &lt; h; d++) c.createElement(e[d]);
+        return c
+    }
+};
+l.html5 = e;
+q(f)</code></pre><p>})(this, document);<br></p></textarea><p></p>
+<h2 id="2、最后在css里面加上这段："><a href="#2、最后在css里面加上这段：" class="headerlink" title="2、最后在css里面加上这段："></a>2、最后在css里面加上这段：</h2><p>/<em>html5</em>/<br>article,aside,dialog,footer,header,section,footer,nav,figure,menu{display:block}</p>
 
-<script>
-var player = videojs('myVideo', {
-    language: 'zh-CN' // 初始化时设置语言，立即生效
-});
-
-/* 动态切换语言
-  使用这种方式进行动态切换不会立即生效，必须有所操作后才会生效。如播放按钮，必须点击一次播放按钮后播放按钮的提示文字才会改变  
- */
-//player.language('zh-TW');
-</script>
-</textarea>
-
-<h3 id="5-2、vue开发"><a href="#5-2、vue开发" class="headerlink" title="5.2、vue开发"></a>5.2、vue开发</h3><textarea autocomplete="off" placeholder="请输入备注" style="height: 200px;">
-import Video from 'video.js'
-/* 不能直接引入js，否则会报错：videojs is not defined 
-import 'video.js/dist/lang/zh-CN.js' */
-import video_zhCN from 'video.js/dist/lang/zh-CN.json'
-import video_en from  'video.js/dist/lang/en.json'
-import 'video.js/dist/video-js.css'
-Video.addLanguage('zh-CN', video_zhCN);
-Video.addLanguage('en', video_en);
-</textarea>
-
-<h2 id="6、解决在iPhone中播放时自动全屏问题"><a href="#6、解决在iPhone中播放时自动全屏问题" class="headerlink" title="6、解决在iPhone中播放时自动全屏问题"></a>6、解决在iPhone中播放时自动全屏问题</h2><p>在iPhone设备上播放视频时(微信浏览器上也会有这个问题)会自动全屏，这里的全屏并不是常规的手机横屏那种全屏，而是类似于一个modal弹窗的全屏，解决办法就是在video标签中添加playsinline=”true”属性</p>
-<textarea autocomplete="off" placeholder="请输入备注" style="height: 100px;">
-<video webkit-playsinline="true" playsinline="true" class="video-js vjs-big-play-centered vjs-fluid">
-</video>
-</textarea>
-
-<h2 id="7、参考文章"><a href="#7、参考文章" class="headerlink" title="7、参考文章"></a>7、参考文章</h2><ul>
-<li><a href="http://vcloud.163.com/vcloud-sdk-manual/WebDemos/LivePlayer_Web/introToComponent.html" rel="nofollow noreferrer" target="_blank">视频云web播放器样式和组件自定义</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/28338413" rel="nofollow noreferrer" target="_blank">Video.js 踩坑简单入门</a></li>
-<li><a href="http://www.cnblogs.com/afrog/p/6689179.html" rel="nofollow noreferrer" target="_blank">免费视频播放器videojs中文教程</a></li>
-</ul>
             </div>
             <hr/>
 
@@ -706,8 +603,8 @@ Video.addLanguage('en', video_en);
                 </a>
             </div>
             <br/>
-            <a  href="/xiaocong/2019/03/04/VideoJs/">
-                    《video.js的使用及问题》
+            <a  href="/xiaocong/2019/03/05/Html5Js/">
+                    《html5.js让IE（包括IE6）支持HTML5元素方法》
             </a> 由
             <a href="https://zbimbaloo.github.io/xiaocong">
                 ZRC
@@ -748,31 +645,31 @@ Video.addLanguage('en', video_en);
     <article id="prenext-posts" class="prev-next articles">
         <div class="row article-row">
             
-                <div class="article col s12 m6" data-aos="fade-up">
-                    <div class="article-badge left-badge text-color">
-                        <i class="fas fa-chevron-left"></i>&nbsp;
-                        上一篇
-                    </div>
-                    <div class="card">
-                        <a href="/xiaocong/2019/03/05/Html5Js/">
-                            <div class="card-image">
-                                
-                                    <img src="/xiaocong/medias/banner/3.jpg" class="responsive-img" alt="html5.js让IE（包括IE6）支持HTML5元素方法">
+                    <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+                        <div class="article-badge left-badge text-color">
+                            <i class="fas fa-chevron-left"></i>&nbsp;
+                            本篇
+                        </div>
+                        <div class="card">
+                            <a href="/xiaocong/2019/03/05/Html5Js/">
+                                <div class="card-image">
                                     
-                                                <span class="card-title">html5.js让IE（包括IE6）支持HTML5元素方法</span>
-                            </div>
-                        </a>
-                        <div class="card-content article-content">
-                            <div class="summary block-with-text">
-                                
-                                    现代的浏览器都支持 HTML5。此外，所有浏览器，包括旧的和最新的，对无法识别的元素会作为内联元素自动处理。正因为如此，你可以 "教会" 浏览器处理 "未知" 的 HTML 元素。
+                                        <img src="/xiaocong/medias/banner/3.jpg" class="responsive-img" alt="html5.js让IE（包括IE6）支持HTML5元素方法">
                                         
-                            </div>
-                            <div class="publish-info">
-                                <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-03-05
-                        </span>
-                                <span class="publish-author">
+                                                    <span class="card-title">html5.js让IE（包括IE6）支持HTML5元素方法</span>
+                                </div>
+                            </a>
+                            <div class="card-content article-content">
+                                <div class="summary block-with-text">
+                                    
+                                        现代的浏览器都支持 HTML5。此外，所有浏览器，包括旧的和最新的，对无法识别的元素会作为内联元素自动处理。正因为如此，你可以 "教会" 浏览器处理 "未知" 的 HTML 元素。
+                                            
+                                </div>
+                                <div class="publish-info">
+                                    <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-03-05
+                            </span>
+                                    <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
@@ -782,47 +679,48 @@ Video.addLanguage('en', video_en);
                             
                             
                         </span>
+                                </div>
                             </div>
-                        </div>
-                        
-                            <div class="card-action article-tags">
-                                
-                                    <a href="/xiaocong/tags/javascript/">
-                                        <span class="chip bg-color">javascript</span>
-                                    </a>
-                                    
-                                    <a href="/xiaocong/tags/html/">
-                                        <span class="chip bg-color">html</span>
-                                    </a>
-                                    
-                            </div>
+
                             
+                                <div class="card-action article-tags">
+                                    
+                                        <a href="/xiaocong/tags/javascript/">
+                                            <span class="chip bg-color">javascript</span>
+                                        </a>
+                                        
+                                        <a href="/xiaocong/tags/html/">
+                                            <span class="chip bg-color">html</span>
+                                        </a>
+                                        
+                                </div>
+                                
+                        </div>
                     </div>
-                </div>
-                
+                    
                         
                             <div class="article col s12 m6" data-aos="fade-up">
                                 <div class="article-badge right-badge text-color">
                                     下一篇&nbsp;<i class="fas fa-chevron-right"></i>
                                 </div>
                                 <div class="card">
-                                    <a href="/xiaocong/2018/09/07/hello-world/">
+                                    <a href="/xiaocong/2019/03/04/VideoJs/">
                                         <div class="card-image">
                                             
-                                                <img src="/xiaocong/medias/banner/0.jpg" class="responsive-img" alt="typora-vue-theme Theme introduction">
+                                                <img src="/xiaocong/medias/banner/2.jpg" class="responsive-img" alt="video.js的使用及问题">
                                                 
-                                                            <span class="card-title">typora-vue-theme Theme introduction</span>
+                                                            <span class="card-title">video.js的使用及问题</span>
                                         </div>
                                     </a>
                                     <div class="card-content article-content">
                                         <div class="summary block-with-text">
                                             
-                                                This is the content of your custom post summary. If there is a value for this attribute, the post card summary will display the text, otherwise the program will automatically intercept part of the post content as a summary.
+                                                最近的项目中需要播放视频，鉴于html5元素video的一些坑及不想自己造轮子，于是就找到了web端播放视频使用量最多的插件video.js，video.js是国外开发者开发的，英语本身就不好的我看英文文档简直是折磨，国内又没有中文文档，能搜的到的基本是简单的使用及最基本的api的介绍，想要实现一些自定义功能无从下手，所以我在这里整理一份我所遇到的问题及解决方法。
                                                     
                                         </div>
                                         <div class="publish-info">
                                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2018-09-07
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-03-04
                             </span>
                                             <span class="publish-author">
                             
@@ -839,12 +737,12 @@ Video.addLanguage('en', video_en);
                                     
                                         <div class="card-action article-tags">
                                             
-                                                <a href="/xiaocong/tags/介绍/">
-                                                    <span class="chip bg-color">介绍</span>
+                                                <a href="/xiaocong/tags/javascript/">
+                                                    <span class="chip bg-color">javascript</span>
                                                 </a>
                                                 
-                                                <a href="/xiaocong/tags/前端/">
-                                                    <span class="chip bg-color">前端</span>
+                                                <a href="/xiaocong/tags/vue/">
+                                                    <span class="chip bg-color">vue</span>
                                                 </a>
                                                 
                                         </div>
