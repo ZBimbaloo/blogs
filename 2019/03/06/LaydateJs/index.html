@@ -4,14 +4,13 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="html5.js让IE（包括IE6）支持HTML5元素方法, 追梦少年">
-    <meta name="description" content="html5.js让IE（包括IE6）支持HTML5元素方法
+    <meta name="keywords" content="LAYDATE日历插件使用, 追梦少年">
+    <meta name="description" content="LAYDATE日历插件使用
 
-1、引用Google的html5.js文件
-    
+A npm version of laydate from laydate
+npm 命令:1npm i --save laydate
 
-
-将上代码复制到head部分，记住一定要是head部分（因为IE必须在元素解析前知道这个元素，所以这个js文件不能在其他位">
+代码：1&amp;lt;input name=&#34;mydate&#34; id=&#34;mydat">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>html5.js让IE（包括IE6）支持HTML5元素方法 | 追梦少年</title>
+    <title>LAYDATE日历插件使用 | 追梦少年</title>
     <link rel="icon" type="image/png" href="/xiaocong/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/xiaocong/libs/awesome/css/all.css">
@@ -275,7 +274,7 @@
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        html5.js让IE（包括IE6）支持HTML5元素方法
+                        LAYDATE日历插件使用
                     </div>
                 </div>
             </div>
@@ -326,7 +325,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-03-05
+                    2019-03-06
                 </div>
 
                 
@@ -342,108 +341,21 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>html5.js让IE（包括IE6）支持HTML5元素方法</p>
+                <p>LAYDATE日历插件使用</p>
 
-<h2 id="1、引用Google的html5-js文件"><a href="#1、引用Google的html5-js文件" class="headerlink" title="1、引用Google的html5.js文件"></a>1、引用Google的html5.js文件</h2><textarea autocomplete="off" placeholder="请输入备注" style="height: 78px;">
-    <!--[if IE]>
-    <script src=”http://html5shiv.googlecode.com/svn/trunk/html5.js”></script>
-    < ![endif]-->
-</textarea>
+<p>A npm version of laydate from <a href="http://www.layui.com/doc/modules/laydate.html" target="_blank" rel="noopener">laydate</a></p>
+<h2 id="npm-命令"><a href="#npm-命令" class="headerlink" title="npm 命令:"></a>npm 命令:</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i --save laydate</span><br></pre></td></tr></table></figure>
 
-<p><b>将上代码复制到head部分，记住一定要是head部分</b>（因为IE必须在元素解析前知道这个元素，所以这个js文件不能在其他位置调用，否则失效）</p>
-<p>当然，你也可以把代码拿出来自己看着办：html5.js</p>
-<textarea autocomplete="off" placeholder="请输入备注" style="height: 1278px;">
-    /*
- HTML5 Shiv v3.6.2pre | @afarkas @jdalton @jon_neal @rem | MIT/GPL2 Licensed
- Uncompressed source: https://github.com/aFarkas/html5shiv
-*/
-(function(l, f) {
-    function m() {
-        var a = e.elements;
-        return "string" == typeof a ? a.split(" ") : a
-    }
+<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"mydate"</span> <span class="attr">id</span>=<span class="string">"mydate"</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<pre><code>function i(a) {
-    var b = n[a[o]];
-    b || (b = {}, h++, a[o] = h, n[h] = b);
-    return b
-}
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> laydate = <span class="built_in">require</span>(<span class="string">"laydate"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//init date</span></span><br><span class="line">laydate(&#123;</span><br><span class="line">elem: <span class="string">'#mydate'</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//reset </span></span><br><span class="line">laydate.reset();</span><br></pre></td></tr></table></figure>
 
-function p(a, b, c) {
-    b || (b = f);
-    if (g) return b.createElement(a);
-    c || (c = i(b));
-    b = c.cache[a] ? c.cache[a].cloneNode() : r.test(a) ? (c.cache[a] = c.createElem(a)).cloneNode() : c.createElem(a);
-    return b.canHaveChildren &amp;&amp; !s.test(a) ? c.frag.appendChild(b) : b
-}
 
-function t(a, b) {
-    if (!b.cache) b.cache = {}, b.createElem = a.createElement, b.createFrag = a.createDocumentFragment, b.frag = b.createFrag();
-    a.createElement = function(c) {
-        return !e.shivMethods ? b.createElem(c) : p(c, a, b)
-    };
-    a.createDocumentFragment = Function(&quot;h,f&quot;, &quot;return function(){var n=f.cloneNode(),c=n.createElement;h.shivMethods&amp;&amp;(&quot; + m().join().replace(/\w+/g, function(a) {
-        b.createElem(a);
-        b.frag.createElement(a);
-        return &apos;c(&quot;&apos; + a + &apos;&quot;)&apos;
-    }) + &quot;);return n}&quot;)(e, b.frag)
-}
+<p>支持的选项    </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">     elem: <span class="string">'#id'</span>, <span class="comment">//需显示日期的元素选择器</span></span><br><span class="line">     event: <span class="string">'click'</span>, <span class="comment">//触发事件</span></span><br><span class="line">     format: <span class="string">'YYYY-MM-DD hh:mm:ss'</span>, <span class="comment">//日期格式</span></span><br><span class="line">     istime: <span class="literal">false</span>, <span class="comment">//是否开启时间选择</span></span><br><span class="line">     isclear: <span class="literal">true</span>, <span class="comment">//是否显示清空</span></span><br><span class="line">     istoday: <span class="literal">true</span>, <span class="comment">//是否显示今天</span></span><br><span class="line">     issure: <span class="literal">true</span>, 是否显示确认</span><br><span class="line">     festival: <span class="literal">true</span> <span class="comment">//是否显示节日</span></span><br><span class="line">     min: <span class="string">'1900-01-01 00:00:00'</span>, <span class="comment">//最小日期</span></span><br><span class="line">     max: <span class="string">'2099-12-31 23:59:59'</span>, <span class="comment">//最大日期</span></span><br><span class="line">     start: <span class="string">'2014-6-15 23:00:00'</span>,  <span class="comment">//开始日期</span></span><br><span class="line">     fixed: <span class="literal">false</span>, <span class="comment">//是否固定在可视区域</span></span><br><span class="line">     zIndex: <span class="number">99999999</span>, <span class="comment">//css z-index</span></span><br><span class="line">     choose: <span class="function"><span class="keyword">function</span>(<span class="params">dates</span>)</span>&#123; <span class="comment">//选择好日期的回调</span></span><br><span class="line">    </span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
 
-function q(a) {
-    a || (a = f);
-    var b = i(a);
-    if (e.shivCSS &amp;&amp; !j &amp;&amp; !b.hasCSS) {
-        var c, d = a;
-        c = d.createElement(&quot;p&quot;);
-        d = d.getElementsByTagName(&quot;head&quot;)[0] || d.documentElement;
-        c.innerHTML = &quot;x&lt;style&gt;article,aside,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}mark{background:#FF0;color:#000}&lt;/style&gt;&quot;;
-        c = d.insertBefore(c.lastChild, d.firstChild);
-        b.hasCSS = !! c
-    }
-    g || t(a, b);
-    return a
-}
-var k = l.html5 || {}, s = /^&lt;|^(?:button|map|select|textarea|object|iframe|option|optgroup)$/i,
-    r = /^(?:a|b|code|div|fieldset|h1|h2|h3|h4|h5|h6|i|label|li|ol|p|q|span|strong|style|table|tbody|td|th|tr|ul)$/i,
-    j, o = &quot;_html5shiv&quot;,
-    h = 0,
-    n = {}, g;
-(function() {
-    try {
-        var a = f.createElement(&quot;a&quot;);
-        a.innerHTML = &quot;&lt;xyz&gt;&lt;/xyz&gt;&quot;;
-        j = &quot;hidden&quot; in a;
-        var b;
-        if (!(b = 1 == a.childNodes.length)) {
-            f.createElement(&quot;a&quot;);
-            var c = f.createDocumentFragment();
-            b = &quot;undefined&quot; == typeof c.cloneNode ||
-                &quot;undefined&quot; == typeof c.createDocumentFragment || &quot;undefined&quot; == typeof c.createElement
-        }
-        g = b
-    } catch (d) {
-        g = j = !0
-    }
-})();
-var e = {
-    elements: k.elements || &quot;abbr article aside audio bdi canvas data datalist details figcaption figure footer header hgroup main mark meter nav output progress section summary time video&quot;,
-    version: &quot;3.6.2pre&quot;,
-    shivCSS: !1 !== k.shivCSS,
-    supportsUnknownElements: g,
-    shivMethods: !1 !== k.shivMethods,
-    type: &quot;default&quot;,
-    shivDocument: q,
-    createElement: p,
-    createDocumentFragment: function(a, b) {
-        a || (a = f);
-        if (g) return a.createDocumentFragment();
-        for (var b = b || i(a), c = b.frag.cloneNode(), d = 0, e = m(), h = e.length; d &lt; h; d++) c.createElement(e[d]);
-        return c
-    }
-};
-l.html5 = e;
-q(f)</code></pre><p>})(this, document);<br></p></textarea><p></p>
-<h2 id="2、最后在css里面加上这段："><a href="#2、最后在css里面加上这段：" class="headerlink" title="2、最后在css里面加上这段："></a>2、最后在css里面加上这段：</h2><p>/<em>html5</em>/<br>article,aside,dialog,footer,header,section,footer,nav,figure,menu{display:block}</p>
+
+<p>更多查看  <a href="http://www.layui.com/doc/modules/layer.html" target="_blank" rel="noopener">http://www.layui.com/doc/modules/layer.html</a><br>dome查看 <a href="https://zbimbaloo.github.io/xiaocong/dome/laydate/test/test">https://zbimbaloo.github.io/xiaocong/dome/laydate/test/test</a></p>
 
             </div>
             <hr/>
@@ -603,8 +515,8 @@ q(f)</code></pre><p>})(this, document);<br></p></textarea><p></p>
                 </a>
             </div>
             <br/>
-            <a  href="/xiaocong/2019/03/05/Html5Js/">
-                    《html5.js让IE（包括IE6）支持HTML5元素方法》
+            <a  href="/xiaocong/2019/03/06/LaydateJs/">
+                    《LAYDATE日历插件使用》
             </a> 由
             <a href="https://zbimbaloo.github.io/xiaocong">
                 ZRC
@@ -645,31 +557,31 @@ q(f)</code></pre><p>})(this, document);<br></p></textarea><p></p>
     <article id="prenext-posts" class="prev-next articles">
         <div class="row article-row">
             
-                <div class="article col s12 m6" data-aos="fade-up">
-                    <div class="article-badge left-badge text-color">
-                        <i class="fas fa-chevron-left"></i>&nbsp;
-                        上一篇
-                    </div>
-                    <div class="card">
-                        <a href="/xiaocong/2019/03/06/Js/">
-                            <div class="card-image">
-                                
-                                    <img src="/xiaocong/medias/banner/4.jpg" class="responsive-img" alt="常见的js插件库">
+                    <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+                        <div class="article-badge left-badge text-color">
+                            <i class="fas fa-chevron-left"></i>&nbsp;
+                            本篇
+                        </div>
+                        <div class="card">
+                            <a href="/xiaocong/2019/03/06/LaydateJs/">
+                                <div class="card-image">
                                     
-                                                <span class="card-title">常见的js插件库</span>
-                            </div>
-                        </a>
-                        <div class="card-content article-content">
-                            <div class="summary block-with-text">
-                                
-                                    js插件开发全解析 js插件的开发包括两种： 一种是类级别的插件开发，即给js添加新的全局函数，相当于给jQuery类本身添加方法。js 的全局函数就是属于js命名空间的函数，另一种是对象级别的插件开发，即给js对象添加方法。
+                                        <img src="/xiaocong/medias/banner/3.jpg" class="responsive-img" alt="LAYDATE日历插件使用">
                                         
-                            </div>
-                            <div class="publish-info">
-                                <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-03-06
-                        </span>
-                                <span class="publish-author">
+                                                    <span class="card-title">LAYDATE日历插件使用</span>
+                                </div>
+                            </a>
+                            <div class="card-content article-content">
+                                <div class="summary block-with-text">
+                                    
+                                        在工作中,我们难免会用到日历插件,我一般喜欢用layDate,因为它属性多,设置方便,还有回调函数可以自定义逻辑处理,挺不错的,现在我们就学习使用它。
+                                            
+                                </div>
+                                <div class="publish-info">
+                                    <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-03-06
+                            </span>
+                                    <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
@@ -679,43 +591,48 @@ q(f)</code></pre><p>})(this, document);<br></p></textarea><p></p>
                             
                             
                         </span>
+                                </div>
                             </div>
-                        </div>
-                        
-                            <div class="card-action article-tags">
-                                
-                                    <a href="/xiaocong/tags/javascript/">
-                                        <span class="chip bg-color">javascript</span>
-                                    </a>
-                                    
-                            </div>
+
                             
+                                <div class="card-action article-tags">
+                                    
+                                        <a href="/xiaocong/tags/javascript/">
+                                            <span class="chip bg-color">javascript</span>
+                                        </a>
+                                        
+                                        <a href="/xiaocong/tags/html/">
+                                            <span class="chip bg-color">html</span>
+                                        </a>
+                                        
+                                </div>
+                                
+                        </div>
                     </div>
-                </div>
-                
+                    
                         
                             <div class="article col s12 m6" data-aos="fade-up">
                                 <div class="article-badge right-badge text-color">
                                     下一篇&nbsp;<i class="fas fa-chevron-right"></i>
                                 </div>
                                 <div class="card">
-                                    <a href="/xiaocong/2019/03/04/VideoJs/">
+                                    <a href="/xiaocong/2019/03/06/Js/">
                                         <div class="card-image">
                                             
-                                                <img src="/xiaocong/medias/banner/2.jpg" class="responsive-img" alt="video.js的使用及问题">
+                                                <img src="/xiaocong/medias/banner/4.jpg" class="responsive-img" alt="常见的js插件库">
                                                 
-                                                            <span class="card-title">video.js的使用及问题</span>
+                                                            <span class="card-title">常见的js插件库</span>
                                         </div>
                                     </a>
                                     <div class="card-content article-content">
                                         <div class="summary block-with-text">
                                             
-                                                最近的项目中需要播放视频，鉴于html5元素video的一些坑及不想自己造轮子，于是就找到了web端播放视频使用量最多的插件video.js，video.js是国外开发者开发的，英语本身就不好的我看英文文档简直是折磨，国内又没有中文文档，能搜的到的基本是简单的使用及最基本的api的介绍，想要实现一些自定义功能无从下手，所以我在这里整理一份我所遇到的问题及解决方法。
+                                                js插件开发全解析 js插件的开发包括两种： 一种是类级别的插件开发，即给js添加新的全局函数，相当于给jQuery类本身添加方法。js 的全局函数就是属于js命名空间的函数，另一种是对象级别的插件开发，即给js对象添加方法。
                                                     
                                         </div>
                                         <div class="publish-info">
                                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-03-04
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-03-06
                             </span>
                                             <span class="publish-author">
                             
@@ -734,10 +651,6 @@ q(f)</code></pre><p>})(this, document);<br></p></textarea><p></p>
                                             
                                                 <a href="/xiaocong/tags/javascript/">
                                                     <span class="chip bg-color">javascript</span>
-                                                </a>
-                                                
-                                                <a href="/xiaocong/tags/vue/">
-                                                    <span class="chip bg-color">vue</span>
                                                 </a>
                                                 
                                         </div>
