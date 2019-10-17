@@ -308,8 +308,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/xiaocong/categories/Markdown/" class="post-category">
-                                Markdown
+                            <a href="/xiaocong/categories/js插件/" class="post-category">
+                                js插件
                             </a>
                         
                     </div>
@@ -339,85 +339,12 @@
                 <p>最近的项目中需要播放视频，鉴于html5元素video的一些坑及不想自己造轮子，于是就找到了web端播放视频使用量最多的插件video.js，video.js是国外开发者开发的，英语本身就不好的我看英文文档简直是折磨，国内又没有中文文档，能搜的到的基本是简单的使用及最基本的api的介绍，想要实现一些自定义功能无从下手，所以我在这里整理一份我所遇到的问题及解决方法</p>
 
 <h2 id="1、视频初始化"><a href="#1、视频初始化" class="headerlink" title="1、视频初始化"></a>1、视频初始化</h2><p>video.js有两种初始化方式，一种是在video的html标签之中，一种是使用js来进行初始化</p>
-<h3 id="1-1、在video中进行初始化"><a href="#1-1、在video中进行初始化" class="headerlink" title="1.1、在video中进行初始化"></a>1.1、在video中进行初始化</h3><textarea autocomplete="off" placeholder="请输入备注" style="height: 278px;">
-    <video id="my-player" class="video-js" controls preload="auto" poster="//vjs.zencdn.net/v/oceans.png" width="600" height="400" data-setup="{}">
-  <source src="//vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
-  <source src="//vjs.zencdn.net/v/oceans.webm" type="video/webm">
-  <source src="//vjs.zencdn.net/v/oceans.ogv" type="video/ogg">
-  <p class="vjs-no-js">
-    To view this video please enable JavaScript, and consider upgrading to a
-    web browser that
-    <a href="https://videojs.com/html5-video-support/" target="_blank">
-      supports HTML5 video
-    </a>
-  </p>
-  </video>
-</textarea>
+<h3 id="1-1、在video中进行初始化"><a href="#1-1、在video中进行初始化" class="headerlink" title="1.1、在video中进行初始化"></a>1.1、在video中进行初始化</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">  &lt;video</span><br><span class="line">  id=&quot;my-player&quot;</span><br><span class="line">  class=&quot;video-js&quot;</span><br><span class="line">  controls</span><br><span class="line">  preload=&quot;auto&quot;</span><br><span class="line">  poster=&quot;//vjs.zencdn.net/v/oceans.png&quot;</span><br><span class="line">  width=&quot;600&quot;</span><br><span class="line">  height=&quot;400&quot;</span><br><span class="line">  data-setup=&apos;&#123;&#125;&apos;&gt;</span><br><span class="line">&lt;source src=&quot;//vjs.zencdn.net/v/oceans.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/source&gt;</span><br><span class="line">&lt;source src=&quot;//vjs.zencdn.net/v/oceans.webm&quot; type=&quot;video/webm&quot;&gt;&lt;/source&gt;</span><br><span class="line">&lt;source src=&quot;//vjs.zencdn.net/v/oceans.ogv&quot; type=&quot;video/ogg&quot;&gt;&lt;/source&gt;</span><br><span class="line">&lt;p class=&quot;vjs-no-js&quot;&gt;</span><br><span class="line">  To view this video please enable JavaScript, and consider upgrading to a</span><br><span class="line">  web browser that</span><br><span class="line">  &lt;a href=&quot;https://videojs.com/html5-video-support/&quot; target=&quot;_blank&quot;&gt;</span><br><span class="line">    supports HTML5 video</span><br><span class="line">  &lt;/a&gt;</span><br><span class="line">&lt;/p&gt;</span><br><span class="line">&lt;/video&gt;</span><br></pre></td></tr></table></figure>
 
 <p>效果</p>
 <p><img src="/xiaocong/medias/banner/articlex.png" alt="效果图" title></p>
 
-<h3 id="1-2、使用js进行初始化"><a href="#1-2、使用js进行初始化" class="headerlink" title="1.2、使用js进行初始化"></a>1.2、使用js进行初始化</h3><textarea autocomplete="off" placeholder="请输入备注" style="height: 278px;">
-    <!-- vjs-big-play-centered可使大的播放按钮居住，vjs-fluid可使视频占满容器 -->
-<video id="myVideo" class="video-js vjs-big-play-centered vjs-fluid">
-  <p class="vjs-no-js">
-    To view this video please enable JavaScript, and consider upgrading to a
-    web browser that
-    <a href="https://videojs.com/html5-video-support/" target="_blank">
-      supports HTML5 video
-    </a>
-  </p>
-</video>
-
-<script>
-var player = videojs(document.getElementById('myVideo'), {
-  controls: true, // 是否显示控制条
-  poster: 'xxx', // 视频封面图地址
-  preload: 'auto',
-  autoplay: false,
-  fluid: true, // 自适应宽高
-  language: 'zh-CN', // 设置语言
-  muted: false, // 是否静音
-  inactivityTimeout: false,
-  controlBar: { // 设置控制条组件
-    /* 设置控制条里面组件的相关属性及显示与否
-    'currentTimeDisplay':true,
-    'timeDivider':true,
-    'durationDisplay':true,
-    'remainingTimeDisplay':false,
-    volumePanel: {
-      inline: false,
-    }
-    */
-    /* 使用children的形式可以控制每一个控件的位置，以及显示与否 */
-    children: [
-      {name: 'playToggle'}, // 播放按钮
-      {name: 'currentTimeDisplay'}, // 当前已播放时间
-      {name: 'progressControl'}, // 播放进度条
-      {name: 'durationDisplay'}, // 总时间
-      { // 倍数播放
-        name: 'playbackRateMenuButton',
-        'playbackRates': [0.5, 1, 1.5, 2, 2.5]
-      },
-      {
-        name: 'volumePanel', // 音量控制
-        inline: false, // 不使用水平方式
-      },
-      {name: 'FullscreenToggle'} // 全屏
-    ]
-  },
-  sources:[ // 视频源
-      {
-          src: '//vjs.zencdn.net/v/oceans.mp4',
-          type: 'video/mp4',
-          poster: '//vjs.zencdn.net/v/oceans.png'
-      }
-  ]
-}, function (){
-  console.log('视频可以播放了',this);
-});
-</script>
-</textarea>
+<h3 id="1-2、使用js进行初始化"><a href="#1-2、使用js进行初始化" class="headerlink" title="1.2、使用js进行初始化"></a>1.2、使用js进行初始化</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">    &lt;!-- vjs-big-play-centered可使大的播放按钮居住，vjs-fluid可使视频占满容器 --&gt;</span><br><span class="line">&lt;video id=&quot;myVideo&quot; class=&quot;video-js vjs-big-play-centered vjs-fluid&quot;&gt;</span><br><span class="line">  &lt;p class=&quot;vjs-no-js&quot;&gt;</span><br><span class="line">    To view this video please enable JavaScript, and consider upgrading to a</span><br><span class="line">    web browser that</span><br><span class="line">    &lt;a href=&quot;https://videojs.com/html5-video-support/&quot; target=&quot;_blank&quot;&gt;</span><br><span class="line">      supports HTML5 video</span><br><span class="line">    &lt;/a&gt;</span><br><span class="line">  &lt;/p&gt;</span><br><span class="line">&lt;/video&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">var player = videojs(document.getElementById(&apos;myVideo&apos;), &#123;</span><br><span class="line">  controls: true, // 是否显示控制条</span><br><span class="line">  poster: &apos;xxx&apos;, // 视频封面图地址</span><br><span class="line">  preload: &apos;auto&apos;,</span><br><span class="line">  autoplay: false,</span><br><span class="line">  fluid: true, // 自适应宽高</span><br><span class="line">  language: &apos;zh-CN&apos;, // 设置语言</span><br><span class="line">  muted: false, // 是否静音</span><br><span class="line">  inactivityTimeout: false,</span><br><span class="line">  controlBar: &#123; // 设置控制条组件</span><br><span class="line">    /* 设置控制条里面组件的相关属性及显示与否</span><br><span class="line">    &apos;currentTimeDisplay&apos;:true,</span><br><span class="line">    &apos;timeDivider&apos;:true,</span><br><span class="line">    &apos;durationDisplay&apos;:true,</span><br><span class="line">    &apos;remainingTimeDisplay&apos;:false,</span><br><span class="line">    volumePanel: &#123;</span><br><span class="line">      inline: false,</span><br><span class="line">    &#125;</span><br><span class="line">    */</span><br><span class="line">    /* 使用children的形式可以控制每一个控件的位置，以及显示与否 */</span><br><span class="line">    children: [</span><br><span class="line">      &#123;name: &apos;playToggle&apos;&#125;, // 播放按钮</span><br><span class="line">      &#123;name: &apos;currentTimeDisplay&apos;&#125;, // 当前已播放时间</span><br><span class="line">      &#123;name: &apos;progressControl&apos;&#125;, // 播放进度条</span><br><span class="line">      &#123;name: &apos;durationDisplay&apos;&#125;, // 总时间</span><br><span class="line">      &#123; // 倍数播放</span><br><span class="line">        name: &apos;playbackRateMenuButton&apos;,</span><br><span class="line">        &apos;playbackRates&apos;: [0.5, 1, 1.5, 2, 2.5]</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        name: &apos;volumePanel&apos;, // 音量控制</span><br><span class="line">        inline: false, // 不使用水平方式</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;name: &apos;FullscreenToggle&apos;&#125; // 全屏</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  sources:[ // 视频源</span><br><span class="line">      &#123;</span><br><span class="line">          src: &apos;//vjs.zencdn.net/v/oceans.mp4&apos;,</span><br><span class="line">          type: &apos;video/mp4&apos;,</span><br><span class="line">          poster: &apos;//vjs.zencdn.net/v/oceans.png&apos;</span><br><span class="line">      &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;, function ()&#123;</span><br><span class="line">  console.log(&apos;视频可以播放了&apos;,this);</span><br><span class="line">&#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
 <h2 id="2、controlBar组件的说明"><a href="#2、controlBar组件的说明" class="headerlink" title="2、controlBar组件的说明"></a>2、controlBar组件的说明</h2><ul>
 <li>playToggle, //播放暂停按钮</li>
@@ -432,116 +359,19 @@ var player = videojs(document.getElementById('myVideo'), {
 <li>fullscreenToggle //全屏控制</li>
 </ul>
 <p>currentTimeDisplay,timeDivider,durationDisplay是相对于 remainingTimeDisplay的另一套组件，后者只显示当前播放时间，前者还显示总时间。若要显示成前者这种模式，即 ‘当前时间/总时间’，可以在初始化播放器选项中配置：</p>
-<textarea autocomplete="off" placeholder="请输入备注" style="height: 178px;">
-    var myPlayer = neplayer('my-video', {controlBar:{
-    'currentTimeDisplay':true,
-    'timeDivider':true,
-    'durationDisplay':true,
-    'remainingTimeDisplay':false
-    }}, function() {
-         console.log('播放器初始化完成');
-    });
-</textarea>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var myPlayer = neplayer(&apos;my-video&apos;, &#123;controlBar:&#123;</span><br><span class="line">&apos;currentTimeDisplay&apos;:true,</span><br><span class="line">&apos;timeDivider&apos;:true,</span><br><span class="line">&apos;durationDisplay&apos;:true,</span><br><span class="line">&apos;remainingTimeDisplay&apos;:false</span><br><span class="line">&#125;&#125;, function() &#123;</span><br><span class="line">     console.log(&apos;播放器初始化完成&apos;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
-<h2 id="3、video-js样式修改"><a href="#3、video-js样式修改" class="headerlink" title="3、video.js样式修改"></a>3、video.js样式修改</h2><textarea autocomplete="off" placeholder="请输入备注" style="height: 600px;">
-.video-js{ /* 给.video-js设置字体大小以统一各浏览器样式表现，因为video.js采用的是em单位 */
-  font-size: 14px;
-}
-.video-js button{
-  outline: none;
-}
-.video-js.vjs-fluid,
-.video-js.vjs-16-9,
-.video-js.vjs-4-3{ /* 视频占满容器高度 */
-  height: 100%;
-  background-color: #161616;
-}
-.vjs-poster{
-  background-color: #161616;
-}
-.video-js .vjs-big-play-button{ /* 中间大的播放按钮 */
-  font-size: 2.5em;
-  line-height: 2.3em;
-  height: 2.5em;
-  width: 2.5em;
-  -webkit-border-radius: 2.5em;
-  -moz-border-radius: 2.5em;
-  border-radius: 2.5em;
-  background-color: rgba(115,133,159,.5);
-  border-width: 0.12em;
-  margin-top: -1.25em;
-  margin-left: -1.75em;
-}
-.video-js.vjs-paused .vjs-big-play-button{ /* 视频暂停时显示播放按钮 */
-  display: block;
-}
-.video-js.vjs-error .vjs-big-play-button{ /* 视频加载出错时隐藏播放按钮 */
-  display: none;
-}
-.vjs-loading-spinner { /* 加载圆圈 */
-  font-size: 2.5em;
-  width: 2em;
-  height: 2em;
-  border-radius: 1em;
-  margin-top: -1em;
-  margin-left: -1.5em;
-}
-.video-js .vjs-control-bar{ /* 控制条默认显示 */
-  display: flex;
-}
-.video-js .vjs-time-control{display:block;}
-.video-js .vjs-remaining-time{display: none;}
+<h2 id="3、video-js样式修改"><a href="#3、video-js样式修改" class="headerlink" title="3、video.js样式修改"></a>3、video.js样式修改</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line">.video-js&#123; /* 给.video-js设置字体大小以统一各浏览器样式表现，因为video.js采用的是em单位 */</span><br><span class="line">  font-size: 14px;</span><br><span class="line">&#125;</span><br><span class="line">.video-js button&#123;</span><br><span class="line">  outline: none;</span><br><span class="line">&#125;</span><br><span class="line">.video-js.vjs-fluid,</span><br><span class="line">.video-js.vjs-16-9,</span><br><span class="line">.video-js.vjs-4-3&#123; /* 视频占满容器高度 */</span><br><span class="line">  height: 100%;</span><br><span class="line">  background-color: #161616;</span><br><span class="line">&#125;</span><br><span class="line">.vjs-poster&#123;</span><br><span class="line">  background-color: #161616;</span><br><span class="line">&#125;</span><br><span class="line">.video-js .vjs-big-play-button&#123; /* 中间大的播放按钮 */</span><br><span class="line">  font-size: 2.5em;</span><br><span class="line">  line-height: 2.3em;</span><br><span class="line">  height: 2.5em;</span><br><span class="line">  width: 2.5em;</span><br><span class="line">  -webkit-border-radius: 2.5em;</span><br><span class="line">  -moz-border-radius: 2.5em;</span><br><span class="line">  border-radius: 2.5em;</span><br><span class="line">  background-color: rgba(115,133,159,.5);</span><br><span class="line">  border-width: 0.12em;</span><br><span class="line">  margin-top: -1.25em;</span><br><span class="line">  margin-left: -1.75em;</span><br><span class="line">&#125;</span><br><span class="line">.video-js.vjs-paused .vjs-big-play-button&#123; /* 视频暂停时显示播放按钮 */</span><br><span class="line">  display: block;</span><br><span class="line">&#125;</span><br><span class="line">.video-js.vjs-error .vjs-big-play-button&#123; /* 视频加载出错时隐藏播放按钮 */</span><br><span class="line">  display: none;</span><br><span class="line">&#125;</span><br><span class="line">.vjs-loading-spinner &#123; /* 加载圆圈 */</span><br><span class="line">  font-size: 2.5em;</span><br><span class="line">  width: 2em;</span><br><span class="line">  height: 2em;</span><br><span class="line">  border-radius: 1em;</span><br><span class="line">  margin-top: -1em;</span><br><span class="line">  margin-left: -1.5em;</span><br><span class="line">&#125;</span><br><span class="line">.video-js .vjs-control-bar&#123; /* 控制条默认显示 */</span><br><span class="line">  display: flex;</span><br><span class="line">&#125;</span><br><span class="line">.video-js .vjs-time-control&#123;display:block;&#125;</span><br><span class="line">.video-js .vjs-remaining-time&#123;display: none;&#125;</span><br><span class="line"></span><br><span class="line">.vjs-button &gt; .vjs-icon-placeholder:before&#123; /* 控制条所有图标，图标字体大小最好使用px单位，如果使用em，各浏览器表现可能会不大一样 */</span><br><span class="line">  font-size: 22px;</span><br><span class="line">  line-height: 1.9;</span><br><span class="line">&#125;</span><br><span class="line">.video-js .vjs-playback-rate .vjs-playback-rate-value&#123;</span><br><span class="line">  line-height: 2.4;</span><br><span class="line">  font-size: 18px;</span><br><span class="line">&#125;</span><br><span class="line">/* 进度条背景色 */</span><br><span class="line">.video-js .vjs-play-progress&#123;</span><br><span class="line">  color: #ffb845;</span><br><span class="line">  background-color: #ffb845;</span><br><span class="line">&#125;</span><br><span class="line">.video-js .vjs-progress-control .vjs-mouse-display&#123;</span><br><span class="line">  background-color: #ffb845;</span><br><span class="line">&#125;</span><br><span class="line">.vjs-mouse-display .vjs-time-tooltip&#123;</span><br><span class="line">  padding-bottom: 6px;</span><br><span class="line">  background-color: #ffb845;</span><br><span class="line">&#125;</span><br><span class="line">.video-js .vjs-play-progress .vjs-time-tooltip&#123;</span><br><span class="line">  display: none!important;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>.vjs-button &gt; .vjs-icon-placeholder:before{ /* 控制条所有图标，图标字体大小最好使用px单位，如果使用em，各浏览器表现可能会不大一样 <em>/<br>  font-size: 22px;<br>  line-height: 1.9;<br>}<br>.video-js .vjs-playback-rate .vjs-playback-rate-value{<br>  line-height: 2.4;<br>  font-size: 18px;<br>}<br>/</em> 进度条背景色 */<br>.video-js .vjs-play-progress{<br>  color: #ffb845;<br>  background-color: #ffb845;<br>}<br>.video-js .vjs-progress-control .vjs-mouse-display{<br>  background-color: #ffb845;<br>}<br>.vjs-mouse-display .vjs-time-tooltip{<br>  padding-bottom: 6px;<br>  background-color: #ffb845;<br>}<br>.video-js .vjs-play-progress .vjs-time-tooltip{<br>  display: none!important;<br>}<br></p></textarea><p></p>
-<h2 id="4、动态切换视频"><a href="#4、动态切换视频" class="headerlink" title="4、动态切换视频"></a>4、动态切换视频</h2><textarea autocomplete="off" placeholder="请输入备注" style="height: 300px;">
-<script>
-  var data = {
-    src: 'xxx.mp4',
-    type: 'video/mp4'
-  };
-  var player = videojs('myVideo', {...});
-  player.pause();
-  player.src(data);
-  player.load(data);
-  // 动态切换poster
-  player.posterImage.setSrc('xxx.jpg');
-  player.play();
+<h2 id="4、动态切换视频"><a href="#4、动态切换视频" class="headerlink" title="4、动态切换视频"></a>4、动态切换视频</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  var data = &#123;</span><br><span class="line">    src: &apos;xxx.mp4&apos;,</span><br><span class="line">    type: &apos;video/mp4&apos;</span><br><span class="line">  &#125;;</span><br><span class="line">  var player = videojs(&apos;myVideo&apos;, &#123;...&#125;);</span><br><span class="line">  player.pause();</span><br><span class="line">  player.src(data);</span><br><span class="line">  player.load(data);</span><br><span class="line">  // 动态切换poster</span><br><span class="line">  player.posterImage.setSrc(&apos;xxx.jpg&apos;);</span><br><span class="line">  player.play();</span><br><span class="line"></span><br><span class="line">  // 销毁videojs</span><br><span class="line">  //player.dispose();</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
-<p>  // 销毁videojs<br>  //player.dispose();<br></script><br></textarea><p></p>
 <h2 id="5、设置语言"><a href="#5、设置语言" class="headerlink" title="5、设置语言"></a>5、设置语言</h2><h3 id="5-1传统形式开发"><a href="#5-1传统形式开发" class="headerlink" title="5.1传统形式开发"></a>5.1传统形式开发</h3><p>对于使用script标签形式的方式引入video.js，只需要在页面中引入你需要的语言包即可</p>
-<textarea autocomplete="off" placeholder="请输入备注" style="height: 300px;">
-<script src="//example.com/path/to/lang/es.js"></script>
-<script src="//example.com/path/to/lang/zh-CN.js"></script>
-<script src="//example.com/path/to/lang/zh-TW.js"></script>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;//example.com/path/to/lang/es.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=&quot;//example.com/path/to/lang/zh-CN.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=&quot;//example.com/path/to/lang/zh-TW.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">var player = videojs(&apos;myVideo&apos;, &#123;</span><br><span class="line">    language: &apos;zh-CN&apos; // 初始化时设置语言，立即生效</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">/* 动态切换语言</span><br><span class="line">  使用这种方式进行动态切换不会立即生效，必须有所操作后才会生效。如播放按钮，必须点击一次播放按钮后播放按钮的提示文字才会改变  </span><br><span class="line"> */</span><br><span class="line">//player.language(&apos;zh-TW&apos;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
-<script>
-var player = videojs('myVideo', {
-    language: 'zh-CN' // 初始化时设置语言，立即生效
-});
-
-/* 动态切换语言
-  使用这种方式进行动态切换不会立即生效，必须有所操作后才会生效。如播放按钮，必须点击一次播放按钮后播放按钮的提示文字才会改变  
- */
-//player.language('zh-TW');
-</script>
-</textarea>
-
-<h3 id="5-2、vue开发"><a href="#5-2、vue开发" class="headerlink" title="5.2、vue开发"></a>5.2、vue开发</h3><textarea autocomplete="off" placeholder="请输入备注" style="height: 200px;">
-import Video from 'video.js'
-/* 不能直接引入js，否则会报错：videojs is not defined 
-import 'video.js/dist/lang/zh-CN.js' */
-import video_zhCN from 'video.js/dist/lang/zh-CN.json'
-import video_en from  'video.js/dist/lang/en.json'
-import 'video.js/dist/video-js.css'
-Video.addLanguage('zh-CN', video_zhCN);
-Video.addLanguage('en', video_en);
-</textarea>
+<h3 id="5-2、vue开发"><a href="#5-2、vue开发" class="headerlink" title="5.2、vue开发"></a>5.2、vue开发</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import Video from &apos;video.js&apos;</span><br><span class="line">/* 不能直接引入js，否则会报错：videojs is not defined </span><br><span class="line">import &apos;video.js/dist/lang/zh-CN.js&apos; */</span><br><span class="line">import video_zhCN from &apos;video.js/dist/lang/zh-CN.json&apos;</span><br><span class="line">import video_en from  &apos;video.js/dist/lang/en.json&apos;</span><br><span class="line">import &apos;video.js/dist/video-js.css&apos;</span><br><span class="line">Video.addLanguage(&apos;zh-CN&apos;, video_zhCN);</span><br><span class="line">Video.addLanguage(&apos;en&apos;, video_en);</span><br></pre></td></tr></table></figure>
 
 <h2 id="6、解决在iPhone中播放时自动全屏问题"><a href="#6、解决在iPhone中播放时自动全屏问题" class="headerlink" title="6、解决在iPhone中播放时自动全屏问题"></a>6、解决在iPhone中播放时自动全屏问题</h2><p>在iPhone设备上播放视频时(微信浏览器上也会有这个问题)会自动全屏，这里的全屏并不是常规的手机横屏那种全屏，而是类似于一个modal弹窗的全屏，解决办法就是在video标签中添加playsinline=”true”属性</p>
-<textarea autocomplete="off" placeholder="请输入备注" style="height: 100px;">
-<video webkit-playsinline="true" playsinline="true" class="video-js vjs-big-play-centered vjs-fluid">
-</video>
-</textarea>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;video</span><br><span class="line">    webkit-playsinline=&quot;true&quot;</span><br><span class="line">    playsinline=&quot;true&quot;</span><br><span class="line">    class=&quot;video-js vjs-big-play-centered vjs-fluid&quot;&gt;</span><br><span class="line">&lt;/video&gt;</span><br></pre></td></tr></table></figure>
 
 <h2 id="7、参考文章"><a href="#7、参考文章" class="headerlink" title="7、参考文章"></a>7、参考文章</h2><ul>
 <li><a href="http://vcloud.163.com/vcloud-sdk-manual/WebDemos/LivePlayer_Web/introToComponent.html" rel="nofollow noreferrer" target="_blank">视频云web播放器样式和组件自定义</a></li>
@@ -776,8 +606,8 @@ Video.addLanguage('en', video_en);
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/xiaocong/categories/Markdown/" class="post-category">
-                                    Markdown
+                            <a href="/xiaocong/categories/js插件/" class="post-category">
+                                    js插件
                                 </a>
                             
                             

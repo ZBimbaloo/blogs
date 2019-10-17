@@ -101,7 +101,7 @@ blockquote {
 pre {
     padding: 1.5rem !important;
     margin: 1rem 0 !important;
-    background: #272822;
+    background: #f6f8fa;
     overflow: auto;
     border-radius: 0.35rem;
     tab-size: 4;
@@ -121,7 +121,10 @@ pre code {
     color: #e8eaf6;
     background-color: #272822;
 }
-
+.code{
+	max-width: 50vw;
+	border: 0;
+}
 pre[class*="language-"] {
     padding: 1.2em;
     margin: .5em 0;
