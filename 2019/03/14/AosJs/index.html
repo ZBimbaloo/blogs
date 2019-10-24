@@ -4,12 +4,9 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="typora-vue-theme主题介绍, 追梦少年">
-    <meta name="description" content="欢迎来到 Hexo! 这是你的第一篇文章。查看文档了解更多信息。如果你在使用Hexo时遇到任何问题，你可以在故障排除中找到答案，或者你可以在GitHub上问我。
-Quick Start
-### Create a new post
-
-1$ h">
+    <meta name="keywords" content="AOS一个独特的页面滚动动画库, 追梦少年">
+    <meta name="description" content="简要教程aos.js是一款效果超赞的页面滚动元素动画jQuery动画库插件。该动画库可以在页面滚动时提供28种不同的元素动画效果，以及多种easing效果。在页面往回滚动时，元素会恢复到原来的状态。
+使用方法在页面中引入aos.css文件,">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +14,7 @@ Quick Start
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>typora-vue-theme主题介绍 | 追梦少年</title>
+    <title>AOS一个独特的页面滚动动画库 | 追梦少年</title>
     <link rel="icon" type="image/png" href="/xiaocong/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/xiaocong/libs/awesome/css/all.css">
@@ -267,13 +264,13 @@ Quick Start
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/xiaocong/medias/banner/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/xiaocong/medias/banner/8.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        typora-vue-theme主题介绍
+                        AOS一个独特的页面滚动动画库
                     </div>
                 </div>
             </div>
@@ -296,12 +293,8 @@ Quick Start
                     
                     <div class="article-tag">
                         
-                            <a href="/xiaocong/tags/介绍/">
-                                <span class="chip bg-color">介绍</span>
-                            </a>
-                        
-                            <a href="/xiaocong/tags/前端/">
-                                <span class="chip bg-color">前端</span>
+                            <a href="/xiaocong/tags/javascript/">
+                                <span class="chip bg-color">javascript</span>
                             </a>
                         
                     </div>
@@ -312,8 +305,8 @@ Quick Start
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/xiaocong/categories/Markdown/" class="post-category">
-                                Markdown
+                            <a href="/xiaocong/categories/js插件/" class="post-category">
+                                js插件
                             </a>
                         
                     </div>
@@ -324,7 +317,7 @@ Quick Start
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2018-09-07
+                    2019-03-14
                 </div>
 
                 
@@ -340,22 +333,127 @@ Quick Start
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>欢迎来到 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! 这是你的第一篇文章。查看文档了解更多信息。如果你在使用Hexo时遇到任何问题，你可以在故障排除中找到答案，或者你可以在GitHub上问我。</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><p><img src="https://www.zybuluo.com/static/img/logo.png" alt="cmd-markdown-logo" title></p>
-### Create a new post
+                <h2 id="简要教程"><a href="#简要教程" class="headerlink" title="简要教程"></a>简要教程</h2><p>aos.js是一款效果超赞的页面滚动元素动画jQuery动画库插件。该动画库可以在页面滚动时提供28种不同的元素动画效果，以及多种easing效果。在页面往回滚动时，元素会恢复到原来的状态。</p>
+<h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><p>在页面中引入aos.css文件,jquery和aos.js文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;dist/aos.css&quot; /&gt;</span><br><span class="line">&lt;script src=&quot;js/jquery.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=&quot;dist/aos.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>要使用aos动画库，你需要做的就是在需要动画的元素上添加aos属性，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div aos=&quot;animation_name&quot;&gt;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>aos脚本将会在页面滚动时，在该元素上触发相应的动画。</p>
+<h5 id="在元素上还可以添加以下一些属性："><a href="#在元素上还可以添加以下一些属性：" class="headerlink" title="在元素上还可以添加以下一些属性："></a>在元素上还可以添加以下一些属性：</h5><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>属性</th>
+<th>属性</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>aos-offset</td>
+<td>是立刻触发动画还是在指定时间之后触发动画</td>
+<td>200</td>
+<td>120</td>
+</tr>
+<tr>
+<td>aos-duration</td>
+<td>动画持续时间</td>
+<td>600</td>
+<td>400</td>
+</tr>
+<tr>
+<td>aos-easing</td>
+<td>动画的easing动画效果</td>
+<td>ease-in-sine</td>
+<td>ease</td>
+</tr>
+<tr>
+<td>aos-delay</td>
+<td>动画的延迟时间</td>
+<td>300</td>
+<td>0</td>
+</tr>
+<tr>
+<td>aos-anchor</td>
+<td>锚元素。使用它的偏移来取代实际元素的偏移来触发动画</td>
+<td>#selector</td>
+<td>null</td>
+</tr>
+<tr>
+<td>aos-anchor-placement</td>
+<td>锚位置，触发动画时元素位于屏幕的位置</td>
+<td>top-center</td>
+<td>top-bottom</td>
+</tr>
+<tr>
+<td>aos-once</td>
+<td>动画是否只会触发一次，或者每次上下滚动都会触发</td>
+<td>true</td>
+<td>false</td>
+</tr>
+</tbody></table>
+<p>注意，aos-duration的动画持续时间的范围从50-3000毫秒，如果你想设置更大的值，可以在页面中添加下面的CSS代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">body[aos-duration=&apos;4000&apos;] [aos], [aos][aos][aos-duration=&apos;4000&apos;]&#123;</span><br><span class="line">  transition-duration: 4000ms;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>上面的代码将动画的持续时间修改为4000毫秒。</p>
+<h3 id="示例代码"><a href="#示例代码" class="headerlink" title="　示例代码"></a>　示例代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;aos-item&quot; data-aos=&quot;fade-up&quot;&gt;</span><br><span class="line">      &lt;div class=&quot;aos-item&quot; data-aos=&quot;fade-down&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;aos-item__inner&quot;&gt;&lt;h3&gt;2&lt;/h3&gt;&lt;/div&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">      &lt;div class=&quot;aos-item&quot; data-aos=&quot;zoom-out-down&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;aos-item__inner&quot;&gt;&lt;h3&gt;3&lt;/h3&gt;&lt;/div&gt;</span><br><span class="line">      &lt;/div&gt;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>如果你担心HTML5校验的问题，可以为上面的属性添加data-前缀。</p>
+<h3 id="全局配置："><a href="#全局配置：" class="headerlink" title="全局配置："></a>全局配置：</h3><p>如果不想单独每个元素做一个动画配置，你可以通过init()方法来统一配置所有元素的动画效果</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">AOS.init(&#123;</span><br><span class="line">  offset: 200,</span><br><span class="line">  duration: 600,</span><br><span class="line">  easing: &apos;ease-in-sine&apos;,</span><br><span class="line">  delay: 100,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<h5 id="额外配置"><a href="#额外配置" class="headerlink" title="额外配置"></a>额外配置</h5><p>AOS提供了2个额外的配置方法，这些方法只能够在初始化时使用。</p>
+<table>
+<thead>
+<tr>
+<th>配置</th>
+<th>描述</th>
+<th>示例值</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>disable</td>
+<td>AOS被禁用的条件</td>
+<td>mobile</td>
+<td>false</td>
+</tr>
+<tr>
+<td>startEvent</td>
+<td>AOS被初始化的事件名称</td>
+<td>exampleEvent</td>
+<td>DOMContentLoaded</td>
+</tr>
+</tbody></table>
+<h5 id="禁用AOS："><a href="#禁用AOS：" class="headerlink" title="禁用AOS："></a>禁用AOS：</h5><p>如果你项在小屏幕设备中禁用AOS，可以：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">AOS.init(&#123;</span><br><span class="line">  disable: &apos;mobile&apos;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>你可以传入3种设备的类型：mobile、phone或tablet。</p>
+<p>你也可以设置自己的禁用条件，例如在屏幕小于1024像素时禁用AOS：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">disable: window.innerWidth &lt; 1024</span><br></pre></td></tr></table></figure>
+
+<p>或者传入一个函数，返回true或false。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">disable: function () &#123;</span><br><span class="line">    var maxWidth = 1024;</span><br><span class="line">    return window.innerWidth &lt; maxWidth;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="开始动画的事件："><a href="#开始动画的事件：" class="headerlink" title="开始动画的事件："></a>开始动画的事件：</h5><p>如果你不想滚动动画从页面加载（DOMContentLoaded）后就开始执行，可以使用startEvent来设置自己的事件，AOS会在document上监听这个事件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">AOS.init(&#123;</span><br><span class="line">  startEvent: &apos;someCoolEvent&apos;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h5 id="API"><a href="#API" class="headerlink" title="API"></a>API</h5><p>AOS对象有2个可用的方法：</p>
+<p>init<br>refresh</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AOS.refresh();</span><br></pre></td></tr></table></figure>
+
+<p>上面的代码会重新计算元素的位置和偏移。</p>
+<h5 id="动画和锚位置"><a href="#动画和锚位置" class="headerlink" title="动画和锚位置"></a>动画和锚位置</h5><p>动画</p>
+<p>淡入淡出动画：</p>
+<p>fade-up<br>fade-down<br>fade-left<br>fade-right<br>fade-up-right<br>fade-up-left<br>fade-down-right<br>fade-down-left<br>翻转动画：</p>
+<p>flip-up<br>flip-down<br>flip-left<br>flip-right<br>滑动动画：</p>
+<p>slide-up<br>slide-down<br>slide-left<br>slide-right<br>缩放动画：</p>
+<p>zoom-in<br>zoom-in-up<br>zoom-in-down<br>zoom-in-left<br>zoom-in-right<br>zoom-out<br>zoom-out-up<br>zoom-out-down<br>zoom-out-left<br>zoom-out-right<br>锚位置</p>
+<p>top-bottom<br>top-center<br>top-top<br>center-bottom<br>center-center<br>center-top<br>bottom-bottom<br>bottom-center<br>bottom-top<br>easing动画</p>
+<p>你可以使用以下的一些easing动画效果：</p>
+<p>linear<br>ease<br>ease-in<br>ease-out<br>ease-in-out<br>ease-in-back<br>ease-out-back<br>ease-in-out-back<br>ease-in-sine<br>ease-out-sine<br>ease-in-out-sine<br>ease-in-quad<br>ease-out-quad<br>ease-in-out-quad<br>ease-in-cubic<br>ease-out-cubic<br>ease-in-out-cubic<br>ease-in-quart<br>ease-out-quart<br>ease-in-out-quart</p>
+<p>dome查看 <a href="https://zbimbaloo.github.io/bimbaloo/dome/jquery.lazyLoad.js/lazyload.html">https://zbimbaloo.github.io/bimbaloo/dome/jquery.lazyLoad.js/lazyload.html</a></p>
 
             </div>
             <hr/>
@@ -515,11 +613,11 @@ Quick Start
                 </a>
             </div>
             <br/>
-            <a  href="/xiaocong/2018/09/07/hello-world/">
-                    《typora-vue-theme主题介绍》
+            <a  href="/xiaocong/2019/03/14/AosJs/">
+                    《AOS一个独特的页面滚动动画库》
             </a> 由
             <a href="https://zbimbaloo.github.io/xiaocong">
-                Qi Zhao
+                ZRC
             </a> 采用
             <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank">
                 知识共享署名 4.0 国际许可协议
@@ -557,31 +655,31 @@ Quick Start
     <article id="prenext-posts" class="prev-next articles">
         <div class="row article-row">
             
-                <div class="article col s12 m6" data-aos="fade-up">
-                    <div class="article-badge left-badge text-color">
-                        <i class="fas fa-chevron-left"></i>&nbsp;
-                        上一篇
-                    </div>
-                    <div class="card">
-                        <a href="/xiaocong/2019/03/04/VideoJs/">
-                            <div class="card-image">
-                                
-                                    <img src="/xiaocong/medias/banner/2.jpg" class="responsive-img" alt="video.js的使用及问题">
+                    <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+                        <div class="article-badge left-badge text-color">
+                            <i class="fas fa-chevron-left"></i>&nbsp;
+                            本篇
+                        </div>
+                        <div class="card">
+                            <a href="/xiaocong/2019/03/14/AosJs/">
+                                <div class="card-image">
                                     
-                                                <span class="card-title">video.js的使用及问题</span>
-                            </div>
-                        </a>
-                        <div class="card-content article-content">
-                            <div class="summary block-with-text">
-                                
-                                    最近的项目中需要播放视频，鉴于html5元素video的一些坑及不想自己造轮子，于是就找到了web端播放视频使用量最多的插件video.js，video.js是国外开发者开发的，英语本身就不好的我看英文文档简直是折磨，国内又没有中文文档，能搜的到的基本是简单的使用及最基本的api的介绍，想要实现一些自定义功能无从下手，所以我在这里整理一份我所遇到的问题及解决方法。
+                                        <img src="/xiaocong/medias/banner/8.jpg" class="responsive-img" alt="AOS一个独特的页面滚动动画库">
                                         
-                            </div>
-                            <div class="publish-info">
-                                <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-03-04
-                        </span>
-                                <span class="publish-author">
+                                                    <span class="card-title">AOS一个独特的页面滚动动画库</span>
+                                </div>
+                            </a>
+                            <div class="card-content article-content">
+                                <div class="summary block-with-text">
+                                    
+                                        AOS 是一个用于在页面滚动的时候呈现元素动画的工具库，你可能会觉得它和 WOWJS 一样，的确他们效果是类似的。但是AOS是 CSS3 动画驱动的库，当你滚动页面的时候能让元素动起来，当页面滚回顶部的时候，元素能够回到前一个状态，如此达到循环动画的效果。
+                                            
+                                </div>
+                                <div class="publish-info">
+                                    <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-03-14
+                            </span>
+                                    <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
@@ -591,77 +689,69 @@ Quick Start
                             
                             
                         </span>
+                                </div>
                             </div>
-                        </div>
-                        
-                            <div class="card-action article-tags">
-                                
-                                    <a href="/xiaocong/tags/javascript/">
-                                        <span class="chip bg-color">javascript</span>
-                                    </a>
-                                    
-                                    <a href="/xiaocong/tags/vue/">
-                                        <span class="chip bg-color">vue</span>
-                                    </a>
-                                    
-                            </div>
+
                             
-                    </div>
-                </div>
-                
-                        
-                                <div class="article col s12 m6" data-aos="fade-up">
-                                    <div class="article-badge right-badge text-color">
-                                        本篇&nbsp;<i class="fas fa-chevron-right"></i>
-                                    </div>
-                                    <div class="card">
-                                        <a href="/xiaocong/2018/09/07/hello-world/">
-                                            <div class="card-image">
-                                                
-                                                    <img src="/xiaocong/medias/banner/0.jpg" class="responsive-img" alt="typora-vue-theme主题介绍">
-                                                    
-                                                                <span class="card-title">typora-vue-theme主题介绍</span>
-                                            </div>
+                                <div class="card-action article-tags">
+                                    
+                                        <a href="/xiaocong/tags/javascript/">
+                                            <span class="chip bg-color">javascript</span>
                                         </a>
-                                        <div class="card-content article-content">
-                                            <div class="summary block-with-text">
+                                        
+                                </div>
+                                
+                        </div>
+                    </div>
+                    
+                        
+                            <div class="article col s12 m6" data-aos="fade-up">
+                                <div class="article-badge right-badge text-color">
+                                    下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                                </div>
+                                <div class="card">
+                                    <a href="/xiaocong/2019/03/12/ChartJs/">
+                                        <div class="card-image">
+                                            
+                                                <img src="/xiaocong/medias/banner/7.jpg" class="responsive-img" alt="chart.js一个生成图表的js插件">
                                                 
-                                                    这是自定义post摘要的内容。如果此属性有值，则post card摘要将显示文本，否则程序将自动截取部分post内容作为摘要。
-                                                        
-                                            </div>
-                                            <div class="publish-info">
-                                                <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2018-09-07
+                                                            <span class="card-title">chart.js一个生成图表的js插件</span>
+                                        </div>
+                                    </a>
+                                    <div class="card-content article-content">
+                                        <div class="summary block-with-text">
+                                            
+                                                Chart.js 是一套简单、干净并且有吸引力的基于 HTML5 技术的 JavaScript 图表工具。Chart.js 为你提供了完整的易于集成到你的网站的生动、交互的图表。
+                                                    
+                                        </div>
+                                        <div class="publish-info">
+                                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-03-12
                             </span>
-                                                <span class="publish-author">
+                                            <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/xiaocong/categories/Markdown/" class="post-category">
-                                    Markdown
+                            <a href="/xiaocong/categories/RC/" class="post-category">
+                                    RC
                                 </a>
                             
                             
                         </span>
-                                            </div>
                                         </div>
-
-                                        
-                                            <div class="card-action article-tags">
-                                                
-                                                    <a href="/xiaocong/tags/介绍/">
-                                                        <span class="chip bg-color">介绍</span>
-                                                    </a>
-                                                    
-                                                    <a href="/xiaocong/tags/前端/">
-                                                        <span class="chip bg-color">前端</span>
-                                                    </a>
-                                                    
-                                            </div>
-                                            
                                     </div>
+                                    
+                                        <div class="card-action article-tags">
+                                            
+                                                <a href="/xiaocong/tags/javascript/">
+                                                    <span class="chip bg-color">javascript</span>
+                                                </a>
+                                                
+                                        </div>
+                                        
                                 </div>
-                                
+                            </div>
+                            
         </div>
     </article>
 </div>
